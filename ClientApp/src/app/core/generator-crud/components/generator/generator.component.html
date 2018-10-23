@@ -1,0 +1,22 @@
+<div style="margin: 10px 40px; max-width: 600px;">
+  <div fxLayout="column" fxLayoutAlign="space-between left" style="margin: 30px 0px 0px 30px; max-width: 100px !important;" >
+    <h3>Generator CRUD</h3>
+    <mat-form-field>
+      <mat-select placeholder="Pilih Entity" [(ngModel)]="selectedModel" (selectionChange)="checkModuleExist()">
+        <mat-option *ngFor="let model of models" [value]="model">
+          {{model}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="column" fxLayoutAlign="space-between end">
+        <button mat-button color="primary" (click)="loadAttribute()">Pilih Attribute</button>
+    </div>
+
+    <mat-selection-list #features>
+      <mat-list-option *ngFor="let feature of featuresArray" [selected]="attrSelected(feature.value)" (click)="selectChange(features)" [value]="feature.value">
+          {{feature.name}}
+      </mat-list-option>
+    </mat-selection-list>
+    <button mat-raised-button color="primary" (click)="onSaveForm()" >Generate</button>
+  </div>
+</div>

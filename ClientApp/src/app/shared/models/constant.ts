@@ -1,0 +1,1 @@
+export const dsnSentry = 'https://e66a5519725f4fdca1c90ebd0978ca97@sentry.io/1286854'
