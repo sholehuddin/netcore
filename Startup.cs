@@ -37,10 +37,10 @@ namespace DashboardPenggunaBMN
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddCors();
             services.AddDbContext<CoreDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), sql => sql.MigrationsAssembly(migrationsAssembly)));
-
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"), sql => sql.MigrationsAssembly(migrationsAssembly)));
+                
             services.AddDbContext<MainDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MainConnection"), sql => sql.MigrationsAssembly(migrationsAssembly)));
+                options.UseSqlite(Configuration.GetConnectionString("MainConnection"), sql => sql.MigrationsAssembly(migrationsAssembly)));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<CoreDbContext>()

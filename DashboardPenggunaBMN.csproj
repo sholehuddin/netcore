@@ -28,6 +28,8 @@
     <PackageReference Include="KemenkeuID.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
     <PackageReference Include="Pusintek.AspNetCore.RBAC" Version="1.1.2" />
     <PackageReference Include="Pusintek.AspNetCore.ScaffoldingComponent" Version="1.0.1" />
   </ItemGroup>
