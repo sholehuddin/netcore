@@ -40,6 +40,7 @@ namespace DashboardPenggunaBMN
                     }
                     SeedLayanan(services).Wait();
                     SeedAplikasi(services).Wait();
+                    SeedSlideshow(services).Wait();
                 }
                 catch (Exception ex)
                 {
