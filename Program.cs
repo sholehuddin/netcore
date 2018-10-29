@@ -158,17 +158,17 @@ namespace DashboardPenggunaBMN
             var apl = new Aplikasi[]
            {
             new Aplikasi{Idlayanan=1, Judul="HRIS", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="e-Performance", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="e-Agenda", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="e-Office", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=4, Judul="Simfoni", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="Perjadin", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=10, Judul="LPDP", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="Clearing House", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=4, Judul="JDIH", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="Notif Keuangan", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Performance", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="PERFORMANCE.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Agenda", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="AGENDA.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Office", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="E-OFFICE.png", Color="hitam"},
+            new Aplikasi{Idlayanan=4, Judul="Simfoni", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="KEUANGAN.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Perjadin", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="PERJADIN.png", Color="hitam"},
+            new Aplikasi{Idlayanan=10, Judul="LPDP", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="CUTI.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Clearing House", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="ADVOKASI.png", Color="hitam"},
+            new Aplikasi{Idlayanan=4, Judul="JDIH", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="ADVOKASI.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Notif Keuangan", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="KEUANGAN.png", Color="hitam"},
             new Aplikasi{Idlayanan=6, Judul="e-PRiME", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
-            new Aplikasi{Idlayanan=1, Judul="e-Perjadin", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Perjadin", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="PERJADIN.png", Color="hitam"},
             new Aplikasi{Idlayanan=1, Judul="Executive Dashboard - Setjen", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
            };
             foreach (Aplikasi ap in apl)
@@ -208,6 +208,26 @@ namespace DashboardPenggunaBMN
             foreach (Layanan lay in layanan)
             {
                 db.Layanan.Add(lay);
+            }
+            db.SaveChanges();
+        }
+
+        private static async Task SeedSlideshow(IServiceProvider serviceProvider)
+        {
+            var db = serviceProvider.GetRequiredService<MainDbContext>();
+            //Look for any menus.
+            if (await db.SlideShow.CountAsync() > 0)
+            {
+                return;   // DB has been seeded
+            }
+
+            var SlideShow = new SlideShow[]{
+                new SlideShow {Judul="Hari Kartini", Deskripsi="Selamat Hari Kartini", ImageUrl="Slide1.jpg", IsPublished=true, UserId=88520},
+                new SlideShow {Judul="Hari Kartini", Deskripsi="Selamat Hari Kartini", ImageUrl="Slide2.jpg", IsPublished=true, UserId=88520},
+            };
+            foreach (SlideShow lay in SlideShow)
+            {
+                db.SlideShow.Add(lay);
             }
             db.SaveChanges();
         }
