@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>e-PRiME Kementerian Keuangan RI</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.css">
+    <link rel="stylesheet" href="~/assets/css/nivo-lightbox.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <link rel="stylesheet" href="~/assets/css/slider.css" />
+    <link rel="stylesheet" href="~/assets/css/jquerysctipttop.css">
+</head>
+<body>
+
+    <!-- Header Section Start -->
+    <header id="hero-area" data-stellar-background-ratio="0.5">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand"><img class="img-fulid" src="~/assets/images/logoeprime.png" alt="" style="width: 45px" ;></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="lnr lnr-menu"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#hero-area">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#layanan">Layanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#testimonial">Aplikasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="http://e-prime.kemenkeu.go.id/Index">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Start -->
+            <ul class="mobile-menu">
+                <li>
+                    <a class="page-scroll" href="#hero-area">Beranda</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#layanan">Layanan</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#testimonial">Aplikasi</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/dashboard">Sign In</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
+
+        </nav>
+        <!-- Navbar End -->
+        <section id="hero-area" class="section">
+            <div class="bannerslide">
+                <div class="slider-container" style="width: 100%;max-height: 602px" ;>
+                    <ul class="slider" style="height:602px">
+                        <li style="width: 1349px !important;">
+                            <img src="~/assets/images/home.jpeg" alt="slide1" />
+                        </li>
+                        @foreach (var slider in ViewBag.SlideShow)
+                        {
+                            <li style="width: 1349px !important;">
+                                <img src="~/assets/images/@slider.ImageUrl" alt="slide2" />
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="layanan" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Layanan</h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="icon controls text-center">
+                            <a class="filter page-scroll" href=".inter" data-filter=".internal">
+                                <i class="fa fa-arrow-circle-down"></i>
+                            </a>
+                        </div>
+                        <h4>Internal</h4>
+                        <p>Layanan Internal adalah layanan korporasi yang diberikan kepada stakeholder internal Kementerian Keuangan</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
+                        <div class="icon controls text-center">
+                            <a class="filter page-scroll" href=".eksternal" data-filter=".eksternal">
+                                <i class="fa fa-arrow-circle-up"></i>
+                            </a>
+                        </div>
+                        <h4>Eksternal</h4>
+                        <p>Layanan Eksternal adalah layanan yang diberikan pada stakeholder luar Kementerian Keuangan. Layanan ini juga merupakan spesial mission yang diberikan untuk Layanan Eksternal tersebut.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="item-boxes wow fadeInDown" data-wow-delay="1.2s">
+                        <div class="icon controls text-center">
+                            <a class="filter page-scroll" href=".tatakelola" data-filter=".tatakelola">
+                                <i class="fa fa-gear"></i>
+                            </a>
+                        </div>
+                        <h4>Tata Kelola</h4>
+                        <p>Layanan Tata Kelola merupakan proses yang mengendalikan atau mengelola operasional dari suatu sistem atau proses yang memastikan proses inti (internal dan ekseternal) dapat berjalan dengan baik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section End -->
+    <!-- Portfolio Section -->
+    <section id="portfolios" class="section">
+        <!-- Container Starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Portfolio Controller/Buttons -->
+                    <div class="controls text-center">
+                        <a class="filter active btn btn-common" data-filter="all">
+                            All
+                        </a>
+                        <a class="filter btn btn-common inter" data-filter=".internal">
+                            Internal
+                        </a>
+                        <a class="filter btn btn-common eksternal" data-filter=".eksternal">
+                            Eksternal
+                        </a>
+                        <a class="filter btn btn-common tatakelola" data-filter=".tatakelola">
+                            Tata Kelola
+                        </a>
+                    </div>
+                    <!-- Portfolio Controller/Buttons Ends-->
+                </div>
+
+                <!-- Portfolio Recent Projects -->
+                <div id="portfolio" class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix internal" onclick="btnlayanan(1)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/umum.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Umum</i>
+                                </a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix internal" onclick="btnlayanan(2)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/sdm.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">SDM</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix internal" onclick="btnlayanan(3)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/komunikasi.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Komunikasi</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix internal" onclick="btnlayanan(4)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/hukum dan peraturan.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Hukum dan Peraturan</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix internal" onclick="btnlayanan(5)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/Manajemen Aset dan Pengadaan.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Manajemen Aset dan Pengadaan</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix internal" onclick="btnlayanan(6)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/TIK.jpg" alt="TIK" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">TIK</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix eksternal" onclick="btnlayanan(7)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/e1.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Profesi Keuangan</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix eksternal" onclick="btnlayanan(8)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/e2.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Pengawas Perpajakan</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix eksternal" onclick="btnlayanan(9)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/e3.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Pengadilan Pajak</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix eksternal" onclick="btnlayanan(10)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/e4.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Dana Pendidikan</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix tatakelola" onclick="btnlayanan(11)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/organisasi.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Organisasi</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix tatakelola" onclick="btnlayanan(12)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/planning.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Planning</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix tatakelola" onclick="btnlayanan(13)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/strategy.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Strategy</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix tatakelola" onclick="btnlayanan(14)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/finance.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Finance</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix tatakelola" onclick="btnlayanan(15)">
+                        <div class="portfolio-item">
+                            <div class="shot-item">
+                                <img src="~/assets/images/portfolio/law.jpg" alt="" />
+                                <a class="overlay lightbox page-scroll" href="#testimonial">
+                                    <i class="lnr item-icon">Kepatuhan Internal</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container Ends -->
+    </section>
+    <!-- Team section End -->
+    <!-- testimonial Section Start -->
+    <div id="testimonial" class="section" data-stellar-background-ratio="0.1">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;padding-top: 60px" ;>Aplikasi</h2>
+                <hr class="lines">
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-12">
+                    @foreach (var layanan in ViewBag.Layanans)
+                    {
+                        <div class="touch-slider owl-carousel owl-theme id-layanan-@layanan.Idlayanan" id="js-carousel-select">
+                            @foreach (var app in ViewBag.Apps)
+                            {
+                                @if (layanan.Idlayanan == app.Idlayanan)
+                                {
+                                    <div class="testimonial-item">
+                                        <a href="@app.Url">
+                                            <img src="~/assets/images/@app.Icon" alt="Client Testimonial" />
+                                        </a>
+                                        <div class="testimonial-text ">
+                                            <br />
+                                            <h3>@app.Judul</h3>
+                                            <p>@app.Deskripsi </p>
+
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                    <div class="touch-slider owl-carousel owl-theme id-layanan-all" id="js-carousel-select">
+                        @foreach (var app in ViewBag.Apps)
+                        {
+
+                            <div class="testimonial-item">
+                                <a target="_blank" href="@app.Url">
+                                    <img src="~/assets/images/@app.Icon" alt="Client Testimonial" />
+                                </a>
+                                <div class="testimonial-text ">
+                                    <br />
+                                    <h3>@app.Judul</h3>
+                                    <p>@app.Deskripsi </p>
+
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row" style="color:white">
+                <!-- Footer Links -->
+                Copyright © &nbsp;<span id="tahun"></span>&nbsp; Kementerian Keuangan RI. Powered by PUSINTEK
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    @*<div id="loader">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>*@
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="~/assets/js/jquery-min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.mixitup.js"></script>
+    <script src="~/assets/js/nivo-lightbox.js"></script>
+    <script src="~/assets/js/owl.carousel.js"></script>
+    <script src="~/assets/js/jquery.stellar.min.js"></script>
+    <script src="~/assets/js/jquery.nav.js"></script>
+    <script src="~/assets/js/scrolling-nav.js"></script>
+    <script src="~/assets/js/jquery.easing.min.js"></script>
+    <script src="~/assets/js/smoothscroll.js"></script>
+    <script src="~/assets/js/jquery.slicknav.js"></script>
+    <script src="~/assets/js/wow.js"></script>
+    @*<script src="~/assets/js/jquery.vide.js"></script>*@
+    <script src="~/assets/js/jquery.counterup.min.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    @*<script src="~/assets/js/waypoints.min.js"></script>*@
+    @*<script src="~/assets/js/form-validator.min.js"></script>
+        <script src="~/assets/js/contact-form-script.js"></script>*@
+    <script src="~/assets/js/main.js"></script>
+    <script type="text/javascript" src="~/assets/js/slider.js"></script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            $(".slider").slider({ height: '602px', width: '1349px'});
+        });
+    </script>
+</body>
+</html>
+
+<script>
+    //Genarate this year in copyright
+    var d = new Date();
+    var n = d.getFullYear();
+    document.getElementById("tahun").innerHTML = n;
+
+    this.active_all();
+
+    function active_all() {
+        $.ajax({
+            type: "GET",
+            url: 'api/Layanan/',
+            contentType: 'application/json;',
+            //data: JSON.stringify({ idlayanan: id }),
+
+            success: function (valid) {
+                if (valid) {
+                    valid.forEach(function (val) {
+                        idClass = '.id-layanan-' + val.Idlayanan;
+                        $(idClass).css({ 'display': 'none' });
+                    });
+                } else {
+                    //show that id is not valid
+                }
+            }
+        });
+
+    }
+    function btnlayanan(id) {
+        //alert(id);
+        //var model = new FormData();
+        //model.append('idlayanan', id)
+        $.ajax({
+            type: "GET",
+            url: 'api/Layanan/',
+            contentType: 'application/json;',
+            //data: JSON.stringify({ idlayanan: id }),
+
+            success: function (valid) {
+                if (valid) {
+                    valid.forEach(function (val) {
+                        idClass = '.id-layanan-' + val.Idlayanan;
+                        $(idClass).css({ 'display': 'none' });
+                    });
+
+                    $('.id-layanan-all').css({ 'display': 'none' });
+                    idClass = '.id-layanan-' + id;
+                    $(idClass).css({ 'display': 'block' });
+                } else {
+                    //show that id is not valid
+                }
+            }
+        });
+    }
+
+
+</script>
+
+<!-- FlexSlider -->
+<script defer src="~/assets/js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+<!-- End-slider-script --> 

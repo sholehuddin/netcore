@@ -1,0 +1,124 @@
+﻿/*
+    body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+   
+*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists */
+will truncate terms that are too long to fit in the left column .dl-horizontal dt {
+    white-space: normal;
+}
+
+.rt-item {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+    .rt-item img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+    }
+
+img {
+    vertical-align: middle;
+}
+
+.rounded-thumbs {
+    padding: 15px 25px 0px;
+}
+
+.rt-item small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+    color: #777;
+    margin-top: 3px;
+}
+
+.cb-item {
+    background: rgba(255, 255, 255, 0.22) none repeat scroll 0% 0%;
+    padding: 10px 0px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.namaText {
+    font-weight: bold;
+    height: 50px;
+    padding-top: 5px;
+    position: relative;
+    text-align: center;
+}
+
+/*gravatar*/
+.clip-circle-xs {
+    background-size: 24px auto;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.clip-circle-sm {
+    background-size: 30px auto;
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: -5px !important;
+}
+
+.clip-circle-md {
+    background-size: 96px auto;
+    border-radius: 50%;
+    height: 96px;
+    margin: auto;
+    overflow: hidden;
+    width: 96px;
+    border: 2px solid #f0f0f0;
+}
+
+.clip-rectangle-md {
+    /*
+  background-size:96px auto;
+  height:110px;
+  width:96px;
+  */
+    background-size: 60px auto;
+    height: 80px;
+    width: 60px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.content-wrapper-full {
+  margin-left: 0px;
+  background-color: #ecf0f5;
+}
+.main-footer-full {
+  margin-left: 0px;
+  background-color: #000;
+  height:30px;
+}
+
+.carousel-inner {
+     background: url('images/bg-pattern.jpg') repeat fixed;
+}
+/*.user-panel > .image > img {
+    max-height: 45px !important;
+    max-width: 45px !important;
+}*/
