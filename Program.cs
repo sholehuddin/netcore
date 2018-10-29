@@ -30,16 +30,16 @@ namespace DashboardPenggunaBMN
                     var context = services.GetRequiredService<CoreDbContext>();
                     if (context.AllMigrationsApplied())
                     {
-                        SeedRoles(services).Wait();
+                        //SeedRoles(services).Wait();
                         // set default action claims for administrator
-                        SeedRoleClaims(services).Wait();
+                        //SeedRoleClaims(services).Wait();
                         // set Default Menu
-                        SeedMenu(services).Wait();
+                        //SeedMenu(services).Wait();
                         // seed Sample Data
-                        SeedSampleData(services).Wait();
-                        SeedLayanan(services).Wait();
-                        SeedAplikasi(services).Wait();
+                        //SeedSampleData(services).Wait();
                     }
+                    SeedLayanan(services).Wait();
+                    SeedAplikasi(services).Wait();
                 }
                 catch (Exception ex)
                 {
