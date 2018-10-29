@@ -137,7 +137,7 @@ namespace DashboardPenggunaBMN
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=LandingPage}/{action=Index}/{id?}");
+                    template: "{controller=Index}/{action=Index}/{id?}");
                 //routes.MapSpaFallbackRoute(
                 //    name: "spa-fallback",
                 //    defaults: new { controller = "", action = "Index" });

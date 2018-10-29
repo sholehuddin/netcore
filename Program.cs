@@ -37,6 +37,8 @@ namespace DashboardPenggunaBMN
                         SeedMenu(services).Wait();
                         // seed Sample Data
                         SeedSampleData(services).Wait();
+                        SeedLayanan(services).Wait();
+                        SeedAplikasi(services).Wait();
                     }
                 }
                 catch (Exception ex)
@@ -121,8 +123,8 @@ namespace DashboardPenggunaBMN
 
             var quotes = new SampleData[]
             {
-                new SampleData{ Quote =  "Be a good person but don’t waste time to prove it.", CreatedBy=1},
-                new SampleData{ Quote =  "Your heart is too valuable. Don’t allow arrogance, jealousy, and hatred to be within it.", CreatedBy=1},
+                new SampleData{ Quote =  "Be a good person but donï¿½t waste time to prove it.", CreatedBy=1},
+                new SampleData{ Quote =  "Your heart is too valuable. Donï¿½t allow arrogance, jealousy, and hatred to be within it.", CreatedBy=1},
                 new SampleData{ Quote =  "Our train is heading towards death, and we are worried about life.", CreatedBy=1},
                 new SampleData{ Quote =  "Do good and good will come to you.", CreatedBy=1},
                 new SampleData{ Quote =  "Forgive and forget not revenge and regret.", CreatedBy=1},
@@ -130,9 +132,9 @@ namespace DashboardPenggunaBMN
                 new SampleData{ Quote =  "Search a beautiful heart, not a beautiful face. Beautiful things are not always good, but good things are always beautiful.", CreatedBy=1},
                 new SampleData{ Quote =  "Time is like a sword, cut it before it cuts you.", CreatedBy=1},
                 new SampleData{ Quote =  "Do not sit idle, for indeed death is seeking you.", CreatedBy=1},
-                new SampleData{ Quote =  "When you learn to accept rather than expect, you’ll have more smiles and less disappointments.", CreatedBy=1},
+                new SampleData{ Quote =  "When you learn to accept rather than expect, youï¿½ll have more smiles and less disappointments.", CreatedBy=1},
                 new SampleData{ Quote =  "You are truly lost when the fear of Allah no longer exists in your heart.", CreatedBy=1},
-                new SampleData{ Quote =  "The most amazing thing about Allah’s Mercy is that it’s constant, never stops, whether you realize it, or not.", CreatedBy=1},
+                new SampleData{ Quote =  "The most amazing thing about Allahï¿½s Mercy is that itï¿½s constant, never stops, whether you realize it, or not.", CreatedBy=1},
                 new SampleData{ Quote =  "The first to give salam is better, the first to apologise is braver, the first to forgive is stronger.", CreatedBy=1},
                 new SampleData{ Quote =  "Forgive and forget not revenge and regret.", CreatedBy=1},
                 new SampleData{ Quote =  "Always speak truth, even if there is fear in speaking the truth.", CreatedBy=1}
@@ -140,6 +142,72 @@ namespace DashboardPenggunaBMN
             foreach (SampleData q in quotes)
             {
                 db.SampleData.Add(q);
+            }
+            db.SaveChanges();
+        }
+
+        private static async Task SeedAplikasi(IServiceProvider serviceProvider)
+        {
+            var db = serviceProvider.GetRequiredService<MainDbContext>();
+            //Look for any menus.
+            if (await db.Aplikasi.CountAsync() > 0)
+            {
+                return;   // DB has been seeded
+            }
+
+            var apl = new Aplikasi[]
+           {
+            new Aplikasi{Idlayanan=1, Judul="HRIS", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Performance", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Agenda", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Office", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=4, Judul="Simfoni", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Perjadin", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=10, Judul="LPDP", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Clearing House", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=4, Judul="JDIH", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Notif Keuangan", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=6, Judul="e-PRiME", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="e-Perjadin", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+            new Aplikasi{Idlayanan=1, Judul="Executive Dashboard - Setjen", Deskripsi="Sistem informasi pengelolaan SDM", Url="http://hris.e-prime.kemenkeu.go.id", Icon="EKSEKUTIF.png", Color="hitam"},
+           };
+            foreach (Aplikasi ap in apl)
+            {
+                db.Aplikasi.Add(ap);
+            }
+
+            db.SaveChanges();
+        }
+
+        private static async Task SeedLayanan(IServiceProvider serviceProvider)
+        {
+            var db = serviceProvider.GetRequiredService<MainDbContext>();
+            //Look for any menus.
+            if (await db.Layanan.CountAsync() > 0)
+            {
+                return;   // DB has been seeded
+            }
+
+            var layanan = new Layanan[]{
+                new Layanan{JenisLayanan=1, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=1, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=1, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=1, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=1, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=1, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=2, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=2, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=2, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=2, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=3, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=3, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=3, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=3, Judul="Layanan", Deskripsi="l", Image=null},
+                new Layanan{JenisLayanan=3, Judul="Layanan", Deskripsi="l", Image=null},
+            };
+            foreach (Layanan lay in layanan)
+            {
+                db.Layanan.Add(lay);
             }
             db.SaveChanges();
         }
